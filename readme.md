@@ -1,3 +1,4 @@
 # Simple-Bot-Messenger
-    yarn
-    node index.js
+### Messenger, Watson Translate e DialogFlow
+	yarn
+	node index.js
