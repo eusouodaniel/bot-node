@@ -3,7 +3,7 @@ const express = require("express");
 var bodyParser = require('body-parser');
 var request = require('request');
 const server = express();
-const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
+const LanguageTranslatorV3 = require('watson-developer-cloud/language-translator/v3');
 
 // watson
 const languageTranslator = new LanguageTranslatorV3({
@@ -98,7 +98,7 @@ function treatMessage(event, translate = null, quantityCharacters = 0, quantityW
 	let messageText = event.message.text;
 
 	if (messageText && translate) {
-	    sendMessage(senderID, translate+" \n*Quantidade de caracteres da antiga frase:* "+quantityCharacters+"  \n*Quantidade de palavras:* "+quantityWord);
+	    sendMessage(senderID, translate+" \n*Quantidade de caracteres da antiga frase:* "+quantityCharacters+" \n*Quantidade de palavras:* "+quantityWord);
 	} else {
 	    sendMessage(senderID, "Atualmente só temos suporte ao Português e Ingles e não identificamos o que você digitou :(, tente novamente");
 	}
